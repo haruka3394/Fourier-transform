@@ -156,6 +156,6 @@ img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
 データを可視化する
 
     - [PythonとOpenCVで画像処理](http://rasp.hateblo.jp/entry/2016/01/24/204539)  
-    - [Python+OpenCVでMouseイベントを取得してお絵描きをする話](https://ensekitt.hatenablog.com/entry/2018/06/17/200000))
+    - [Python+OpenCVでMouseイベントを取得してお絵描きをする話](https://ensekitt.hatenablog.com/entry/2018/06/17/200000))  
 マウスイベントについて
 
