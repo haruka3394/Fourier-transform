@@ -110,43 +110,28 @@ wind2.canvas.mpl_connect('key_press_event', key)
 
 ```
 - コードの説明
-- cv2 (openCVを使用する), numpy as np (array型の変数を使用する),  matplotlib.pyplot as plt (グラフを表示させる)ライブラリをインポートする. 
+```Python
+# フーリエ変換
+dft = cv2.dft(np.float32(img),flags = cv2.DFT_COMPLEX_OUTPUT)
+dft_shift = np.fft.fftshift(dft)
+magnitude_spectrum = 20*np.log(cv2.magnitude(dft_shift[:,:,0],dft_shift[:,:,1]))
 
-- `y = []` : 配列を得ている
-- `capture = cv2.VideoCapture(0)` : カメラのキャプチャを開始させる. 
-``` Phython
-while(True):
-ret, frame = capture.read()
-gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
-avr = np.average(gray)
-print(avr)
-y.append(avr)
-cv2.imshow('frame',gray)
-if cv2.waitKey(1) & 0xFF == ord('q'):
-break
+# 逆フーリエ変換
+dft_ishift = np.fft.ifftshift(dft_shift)
+img_back = cv2.idft(dft_ishift)
+img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
 ```
-- このwhile文でキーボードからqを入力されるまで画像を取得して基礎値の平均を取っている. これは毎フレームごとに行われる. 
-- `capture.read()` : カメラから画像を取得する. それをframeに入れている. 
-- `gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)` : 画像をグレースケールに変換している. 
-- `avr = np.average(gray)` : グレースケールに変換した画像の輝度値の平均値を取っている.  
-- `print(avr)` : 輝度値の平均値を表示させている. 
-- `y.append(avr)` : yに輝度値の平均値の値を入れて行っている. 
-- `cv2.imshow('frame',gray)` : カメラの画像をウィンドウに出力している. 
+- フーリエ変換と逆フーリエ変換に関してはサイトを参照した. 
 
-- `print(len(y))` : 輝度値の平均値がいくつあるかを表示させている. 
-- `x=np.linspace(1,100,len(y))` : xを定義している. 1から100までを輝度値の平均値の個数で割っている. 
-- `capture.release(), cv2.destroyAllWindows()` : カメラから得ているキャプチャを終了し, ウィンドウを閉じる. 
-- `plt.plot(x, y, label="test"), plt.show()` : w,yの値を表示させている. 
+- まず初めに
 
 
 - 実行結果  
-今回の課題は, カメラに指を押し当て脈拍を図るというものだった. これは指に光をあてることで指を透過し, 光の微量な変化を読み込み, 輝度値の平均としてグラフに表示している. 以下にグラフを表示する. 
+今回の課題は, リアルタイムでフーリエ変換を行うものだった. 
 
-![](opencv-2.pdf)
+![](1.png)
 
-これにより脈拍をグラフの一定の変化により確認することができる. また, 輝度値の値をkidoti.txtに示し, ウィンドウの画像の変化をGIFに示す. GIFファイルからも光の微量な変化を見ることができる. 
-
-![](openCV.gif)
+![](2.png)
 
 - バージョン
 - macOS Mojave 10.14.5
