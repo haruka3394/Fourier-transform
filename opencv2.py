@@ -20,6 +20,7 @@ dft_ishift = np.fft.ifftshift(dft_shift)
 img_back = cv2.idft(dft_ishift)
 img_back = cv2.magnitude(img_back[:,:,0],im  g_back[:,:,1])
 
+# 通化した座標の記録
 def addClick(x,y,click):
     A = click
     A[y,x] = 1
@@ -72,6 +73,7 @@ def release(event):
 
 fig = plt.figure(figsize=(9,4))
 
+# 表示させる画像の処理
 ax1 = fig.add_subplot(2,3,1)
 ax1.imshow(im, cmap='gray')
 ax1.set_title('Input Image')
