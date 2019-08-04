@@ -152,7 +152,7 @@ img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
     - [フーリエ変換OpenCV](http://labs.eecs.tottori-u.ac.jp/sd/Member/oyamada/OpenCV/html/py_tutorials/py_imgproc/py_transforms/py_fourier_transform/py_fourier_transform.html)  
 フーリエ変換をする方法
 
-    - [matplotlibによるデータ可視化の方法](https://qiita.com/ynakayama/items/8d3b1f7356da5bcbe9bc）  
+    - [matplotlibによるデータ可視化の方法](https://qiita.com/ynakayama/items/8d3b1f7356da5bcbe9bc)  
 データを可視化する
 
     - [PythonとOpenCVで画像処理](http://rasp.hateblo.jp/entry/2016/01/24/204539)  
