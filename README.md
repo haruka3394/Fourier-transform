@@ -110,6 +110,7 @@ wind2.canvas.mpl_connect('key_press_event', key)
 
 ```
 - コードの説明
+    - フーリエ変換と逆フーリエ変換に関してはサイトを参照した. 
 ```Python
 # フーリエ変換
 dft = cv2.dft(np.float32(img),flags = cv2.DFT_COMPLEX_OUTPUT)
@@ -121,7 +122,7 @@ dft_ishift = np.fft.ifftshift(dft_shift)
 img_back = cv2.idft(dft_ishift)
 img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
 ```
-    - フーリエ変換と逆フーリエ変換に関してはサイトを参照した. 
+- 
     - 周波数の指定を配列を使って行う. クリックした座標を1, そうでない座標を0で記録し表示するようにしている. そのための関数が`addClick(x,y,click)`である. 
     - sin波を切り抜く関数が`mkWave(x, y)`である. 
     - sin波を合成するのが`reset(x, y, A)`である. yの処理は元に戻ることを確認する処理である. フーリエ変換をした値を使用している. 
