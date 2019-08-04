@@ -138,7 +138,7 @@ img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
 - 実行結果  
 今回の課題は, リアルタイムでフーリエ変換を行うものだった.  
 使用した画像を下に記す. 
-![](flower.jpg)
+![](flower.jpg)  
 結果はリアルタイムに周波数を指定するものと実行結果を示すものの2つにウィンドウを分けた. その様子を下記に記す. 
  
 ![](1.png)
@@ -152,7 +152,7 @@ img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
     - Pyhton 3.7
 
 - 参考文献
-    - [２次元フーリエ変換/逆変換デモ](https://www.youtube.com/watch?v=qB0cffZpw-A)
+    - [２次元フーリエ変換/逆変換デモ](https://www.youtube.com/watch?v=qB0cffZpw-A)  
     課題参考動画
     - [フーリエ変換OpenCV](http://labs.eecs.tottori-u.ac.jp/sd/Member/oyamada/OpenCV/html/py_tutorials/py_imgproc/py_transforms/py_fourier_transform/py_fourier_transform.html)  
 フーリエ変換をする方法
