@@ -136,7 +136,10 @@ img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
     - 最後にマウスイベントを指定している. これによりマウスパッドやキーボードからの入力と関数を同期させている. 
 
 - 実行結果  
-今回の課題は, リアルタイムでフーリエ変換を行うものだった. なのでウィンドウを2つに分けてリアルタイムに周波数を指定するものと実行結果を示すものに分けた. 結果を下記に記す. 
+今回の課題は, リアルタイムでフーリエ変換を行うものだった.  
+使用した画像を下に記す. 
+![](flower.png)
+結果はリアルタイムに周波数を指定するものと実行結果を示すものの2つにウィンドウを分けた. その様子を下記に記す. 
  
 ![](1.png)
 
@@ -149,6 +152,7 @@ img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
     - Pyhton 3.7
 
 - 参考文献
+    - [２次元フーリエ変換/逆変換デモ](https://www.youtube.com/watch?v=qB0cffZpw-A)
     - [フーリエ変換OpenCV](http://labs.eecs.tottori-u.ac.jp/sd/Member/oyamada/OpenCV/html/py_tutorials/py_imgproc/py_transforms/py_fourier_transform/py_fourier_transform.html)  
 フーリエ変換をする方法
 
@@ -156,6 +160,6 @@ img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
 データを可視化する
 
     - [PythonとOpenCVで画像処理](http://rasp.hateblo.jp/entry/2016/01/24/204539)  
-    - [Python+OpenCVでMouseイベントを取得してお絵描きをする話](https://ensekitt.hatenablog.com/entry/2018/06/17/200000))  
+    - [Python+OpenCVでMouseイベントを取得してお絵描きをする話](https://ensekitt.hatenablog.com/entry/2018/06/17/200000))
 マウスイベントについて
 
